@@ -8,7 +8,13 @@ I assume you already have VirtualBox (version 5+) installed,
 if you don't, please [download](https://www.virtualbox.org/wiki/Downloads) and install it.
 
 1. [Download and install Vagrant](http://www.vagrantup.com/downloads.html) if you haven't previously done so.
-2. Change into the `deep-learning-vm` directory and run `vagrant up` - this creates the VM.
+2. Change into the `deep-learning-vm` directory and run
+    $ vagrant up 
+    this creates the VM.
+3. Once the vm is up run
+    $vagrant ssh 
+4. To start Jupyter run: 
+    $jupyter notebook --no-browser --ip=0.0.0.0
 
 ### What's Installed
 

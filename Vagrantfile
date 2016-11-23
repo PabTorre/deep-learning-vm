@@ -16,6 +16,7 @@ Vagrant.configure('2') do |config|
   config.vm.provision :shell, path: 'setup.sh', keep_color: true
 
   config.vm.synced_folder "notebooks/", "/home/vagrant/notebooks"
+  config.vm.synced_folder "../data/", "/home/vagrant/data"
 
   config.vm.network "forwarded_port", guest: 8100, host: 8100, auto_correct: true
   config.vm.network "forwarded_port", guest: 6006, host: 6006, auto_correct: true

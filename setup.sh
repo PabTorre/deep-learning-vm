@@ -21,6 +21,16 @@ mssg "Provisioning the Deep Learning Virtual Machine ..."
 mssg "Updating the package index files. Usually takes ~ 6 minutes, depending on the speed of your network ..."
 apt-get -y update >/dev/null 2>&1
 
+
+#############################################
+# Add CUDA toolkit 
+
+# add cuda first
+wget -O /tmp/cuda-repo-ubuntu1410_7.0-28_amd64.deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1410/x86_64/cuda-repo-ubuntu1410_7.0-28_amd64.deb
+dpkg -i /tmp/cuda-repo-ubuntu1410_7.0-28_amd64.deb 
+#
+apt-get install -y cuda-7-0 cuda-toolkit-7-0
+
 ################################################
 # apt-fast
 mssg "Installing apt-fast to try speed things up ..."
